@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/*
+* float 해제
+*/
+/*
+* 기본 테이블
+*/
+/**
+* 기본 버튼
+*
+* @param {border value} $border border크기와 색지정
+* @param {color value} $bgColor background 색지정
+* @param {color value} $color 글자색지정
+* @param {size value} $width 가로크기
+* @param {size value} $height 세로크기
+*/
+/*
+* button group (default button들을 한줄로 묶어 주는 역할)
+*/
+/*
+* defaultTab
+*/
+
+/*# sourceMappingURL=maps/common.css.map */
