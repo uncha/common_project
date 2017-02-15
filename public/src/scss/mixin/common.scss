@@ -97,3 +97,24 @@
 		}
 	}
 }
+
+/*
+* 절반 크기 얻기
+*/
+@function msize($size) {
+	 @return $size / 2;
+}
+
+/*
+* px 퍼센트값 얻기
+*/
+@function sumPercent($targetSize:0, $standardSize:0, $unit:%) {
+	 @return ($targetSize / $standardSize * 100) + $unit;
+}
+
+/*
+* Rem사이즈값 얻기
+*/
+@function getRem($fontSize, $baseSize:$HTML_FONTSIZE) {
+	@return $fontSize / 2 / $baseSize + rem;
+}
