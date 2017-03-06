@@ -24,11 +24,12 @@
 /**
 * 기본 버튼
 *
-* @param {border value} $border border크기와 색지정
-* @param {color value} $bgColor background 색지정
-* @param {color value} $color 글자색지정
-* @param {size value} $width 가로크기
-* @param {size value} $height 세로크기
+* @param {border value} $border - border크기와 색지정
+* @param {color value} $bgColor - background 색지정
+* @param {color value} $color - 글자색지정
+* @param {size value} $width - 가로크기
+* @param {size value} $height - 세로크기
+* @param {size value} $fontSize - 글자크기
 */
 @mixin defaultButton($border:1px solid #c7c7c7, $bgColor:#FFF, $color:#666, $width:150px, $height:40px, $fontSize:14px){
 	display:block;
@@ -63,6 +64,14 @@
 
 /*
 * defaultTab
+*
+* @param {Number} $size - 탭 갯수
+* @param {color value} $defaultColor - 탭 배경 색
+* @param {color value} $defaultFontColor - 탭 글자 색
+* @param {color value} $activeColor - 탭 활성화 배경 색
+* @param {color value} $activeFontColor - 탭 활성화 글자 색
+* @param {size value} $fontSize - 글자 크기
+* @param {size value} $height - 탭 높이
 */
 @mixin defaultTab($size:2, $defaultColor:#CCC, $defaultFontColor:#000, $activeColor:#000, $activeFontColor:#FFF, $fontSize:16px, $height:30px){
 	> *{
@@ -100,6 +109,8 @@
 
 /*
 * 절반 크기 얻기
+*
+* @param {size value} $size - 크기값
 */
 @function msize($size) {
 	 @return $size / 2;
@@ -107,6 +118,10 @@
 
 /*
 * px 퍼센트값 얻기
+*
+* @param {px} $targetSize - 퍼센트값으로 반환받을 px값
+* @param {px} $standardSize - 기준이 될 px값
+* @param {unit} $unit - %, vw, vh등 퍼센트 단위
 */
 @function sumPercent($targetSize:0, $standardSize:0, $unit:%) {
 	 @return ($targetSize / $standardSize * 100) + $unit;
@@ -114,7 +129,9 @@
 
 /*
 * Rem사이즈값 얻기
+*
+* @param {Number} $fontSize - rem으로 반환받을 폰트의 크기의 숫자값
 */
-@function getRem($fontSize, $baseSize:$HTML_FONTSIZE) {
+@function getRem($fontSize, $baseSize:20px) {
 	@return $fontSize / 2 / $baseSize + rem;
 }

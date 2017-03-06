@@ -1,8 +1,17 @@
+/**
+* 주소 Util
+* @author uncha
+*/
 export class Location{
 	constructor(){
 
 	}
-
+    
+    /*
+    * 파라미터값 얻기
+    * 
+    * @param {String} paramName - 값을 얻을 파라미터명
+    */
 	static getParamValue(paramName){
 		if(!paramName) throw new Error('검색할 파라미터명이 전달되어야 합니다.');
 

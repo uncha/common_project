@@ -1,17 +1,17 @@
 /**
-* Creates an instance of Slider.
+* 슬라이더
 * @author uncha
 * 
 * @constructor
-* @param {jQuery} wrap - 
-* @param {jQuery} slideList - 
-* @param {jQuery} paging - 
-* @param {jQuery} btnAuto - 
-* @param {Boolean} useAutoPlay - 
-* @param {jQuery} prevBtn - 
-* @param {jQuery} nextBtn - 
-* @param {Function} slideStart - 
-* @param {Function} slideEnd - 
+* @param {jQuery} wrap - 슬라이더 wrapper
+* @param {jQuery} slideList - 슬라이더의 개별 리스트
+* @param {jQuery} paging - 페이지를 표시할 리스트(생략 가능)
+* @param {jQuery} btnAuto - 자동 플레이 버튼(생략 가능)
+* @param {Boolean} useAutoPlay - 자동 플레이 사용 유, 무(생략 가능)
+* @param {jQuery} prevBtn - 이전 버튼(생략 가능)
+* @param {jQuery} nextBtn - 다음 버튼(생략 가능)
+* @param {Function} slideStart - 슬라이드 시작 콜백(생략 가능)
+* @param {Function} slideEnd - 슬라이드 끝 콜백(생략 가능)
 */
 export class Slider{
 	constructor({
@@ -50,6 +50,9 @@ export class Slider{
 		this.timer();
 	}
 
+	/*
+	* 초기 이벤트 생성
+	*/
 	addEvent(){
 		let $this = this;
 		let _this = _(this);
@@ -106,6 +109,12 @@ export class Slider{
 		});
 	}
 
+	/*
+	* 슬라이드 실행 함수
+	*
+	* @param {Number} i - 활성화 시킬 슬라이드 index
+	* @param {String} direction - 슬라이드 방향 left, right(생략 가능)
+	*/
 	move(i, direction='right'){
 		if(_(this).current == i) return;
 
@@ -138,6 +147,9 @@ export class Slider{
 		_(this).current = i;
 	}
 
+	/*
+	* 자동 슬라이드
+	*/
 	timer(){
 		if(!_(this).useAutoPlay) return;
 

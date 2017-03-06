@@ -1,10 +1,19 @@
 /**
-* Creates an instance of Popup.
+* 레이어 팝업
 * @author uncha
 *
-* 
+* @constructor
+* @param {size value or String} left - 팝업 left position(생략 가능)
+* @param {size value or String} top - 팝업 top position(생략 가능)
+* @param {String} selector - 팝업 선택자
+* @param {jQuery} element - 팝업 엘리먼트
+* @param {String} buttonElement - 팝업을 띄울 버튼 선택자(생략 가능)
+* @param {String} position - 팝업의 position값 absolute, fixed등(생략 가능)
+* @param {color value} backgroundColor - 팝업 dimd색(생략 가능)
+* @param {Boolean} defaultShow - 초기 팝업 보이기(생략 가능)
+* @param {Function} show - 팝업이 열릴때 콜백(생략 가능)
+* @param {Function} hide - 팝업이 닫힐때 콜백 (생략 가능)
 */
-
 export class Popup{
 	constructor({
 		left='center',
@@ -79,6 +88,9 @@ export class Popup{
 		if(defaultShow) this.show();
 	}
 
+	/*
+	* 팝업 열기
+	*/
 	show(){
 		_(this).$element.fadeIn(400);
 		if(_(this).$bg) _(this).$bg.fadeIn(400);
@@ -86,6 +98,9 @@ export class Popup{
 		_(this).show.apply(this, []);
 	}
 
+	/*
+	* 팝업 닫기
+	*/
 	hide(){
 		_(this).$element.fadeOut(400);
 		if(_(this).$bg) _(this).$bg.fadeOut(400);
@@ -93,6 +108,9 @@ export class Popup{
 		_(this).hide.apply(this, []);
 	}
 
+	/*
+	* 팝업 삭제
+	*/
 	destroy(){
 		_(this).$element.find('.btn-popup-close').off('click.Popup');
 		_(this).$element.remove();
