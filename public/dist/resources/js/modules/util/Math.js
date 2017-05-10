@@ -8,10 +8,26 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+* 수학연산 Util
+* @author uncha
+*/
 var Math = exports.Math = function () {
 	function Math() {
 		_classCallCheck(this, Math);
 	}
+
+	/*
+ * 1차 함수 
+ * tg의 start:min = end:max 비례식 값 얻기
+ *
+ * @param {Number} tg - 비교대상이될 값
+ * @param {Number} start - 시작 값
+ * @param {Number} end - 종료 값
+ * @param {Number} min - 최소 값
+ * @param {Number} max - 최대 값
+ */
+
 
 	_createClass(Math, null, [{
 		key: 'linearFunction',

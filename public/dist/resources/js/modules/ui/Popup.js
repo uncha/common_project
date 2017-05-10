@@ -9,12 +9,21 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* Creates an instance of Popup.
+* 레이어 팝업
 * @author uncha
 *
-* 
+* @constructor
+* @param {size value or String} left - 팝업 left position(생략 가능)
+* @param {size value or String} top - 팝업 top position(생략 가능)
+* @param {String} selector - 팝업 선택자
+* @param {jQuery} element - 팝업 엘리먼트
+* @param {String} buttonElement - 팝업을 띄울 버튼 선택자(생략 가능)
+* @param {String} position - 팝업의 position값 absolute, fixed등(생략 가능)
+* @param {color value} backgroundColor - 팝업 dimd색(생략 가능)
+* @param {Boolean} defaultShow - 초기 팝업 보이기(생략 가능)
+* @param {Function} show - 팝업이 열릴때 콜백(생략 가능)
+* @param {Function} hide - 팝업이 닫힐때 콜백 (생략 가능)
 */
-
 var Popup = exports.Popup = function () {
 	function Popup(_ref) {
 		var _ref$left = _ref.left,
@@ -102,6 +111,11 @@ var Popup = exports.Popup = function () {
 		if (defaultShow) this.show();
 	}
 
+	/*
+ * 팝업 열기
+ */
+
+
 	_createClass(Popup, [{
 		key: 'show',
 		value: function show() {
@@ -110,6 +124,11 @@ var Popup = exports.Popup = function () {
 
 			_(this).show.apply(this, []);
 		}
+
+		/*
+  * 팝업 닫기
+  */
+
 	}, {
 		key: 'hide',
 		value: function hide() {
@@ -118,6 +137,11 @@ var Popup = exports.Popup = function () {
 
 			_(this).hide.apply(this, []);
 		}
+
+		/*
+  * 팝업 삭제
+  */
+
 	}, {
 		key: 'destroy',
 		value: function destroy() {

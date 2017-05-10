@@ -9,19 +9,19 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
-* Creates an instance of Slider.
+* 슬라이더
 * @author uncha
 * 
 * @constructor
-* @param {jQuery} wrap - 
-* @param {jQuery} slideList - 
-* @param {jQuery} paging - 
-* @param {jQuery} btnAuto - 
-* @param {Boolean} useAutoPlay - 
-* @param {jQuery} prevBtn - 
-* @param {jQuery} nextBtn - 
-* @param {Function} slideStart - 
-* @param {Function} slideEnd - 
+* @param {jQuery} wrap - 슬라이더 wrapper
+* @param {jQuery} slideList - 슬라이더의 개별 리스트
+* @param {jQuery} paging - 페이지를 표시할 리스트(생략 가능)
+* @param {jQuery} btnAuto - 자동 플레이 버튼(생략 가능)
+* @param {Boolean} useAutoPlay - 자동 플레이 사용 유, 무(생략 가능)
+* @param {jQuery} prevBtn - 이전 버튼(생략 가능)
+* @param {jQuery} nextBtn - 다음 버튼(생략 가능)
+* @param {Function} slideStart - 슬라이드 시작 콜백(생략 가능)
+* @param {Function} slideEnd - 슬라이드 끝 콜백(생략 가능)
 */
 var Slider = exports.Slider = function () {
 	function Slider(_ref) {
@@ -69,6 +69,11 @@ var Slider = exports.Slider = function () {
 		this.addEvent();
 		this.timer();
 	}
+
+	/*
+ * 초기 이벤트 생성
+ */
+
 
 	_createClass(Slider, [{
 		key: 'addEvent',
@@ -127,6 +132,14 @@ var Slider = exports.Slider = function () {
 				$this.move(i, 'left');
 			});
 		}
+
+		/*
+  * 슬라이드 실행 함수
+  *
+  * @param {Number} i - 활성화 시킬 슬라이드 index
+  * @param {String} direction - 슬라이드 방향 left, right(생략 가능)
+  */
+
 	}, {
 		key: 'move',
 		value: function move(i) {
@@ -162,6 +175,11 @@ var Slider = exports.Slider = function () {
 
 			_(this).current = i;
 		}
+
+		/*
+  * 자동 슬라이드
+  */
+
 	}, {
 		key: 'timer',
 		value: function timer() {
